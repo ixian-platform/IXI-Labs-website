@@ -1,0 +1,328 @@
+/* ===================================
+   BUTTON COMPONENT
+   All variants, states, and icon configurations
+   Based on Figma design specifications
+   =================================== */
+
+/* ===================================
+   BASE BUTTON STYLES
+   =================================== */
+.btn {
+    /* Typography */
+    font-family: var(--font-secondary); /* Inter */
+    font-weight: var(--font-weight-semibold); /* 600 */
+    font-size: var(--font-size-label-md); /* 16px / 1rem */
+    line-height: var(--line-height-label-md); /* 24px / 1.5rem */
+    letter-spacing: var(--letter-spacing-label-md); /* -0.5px / -0.03125rem */
+
+    /* Layout */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-xs); /* 8px - gap between label and icons */
+
+    /* Padding - adjusted per variant */
+    padding: var(--spacing-sm) var(--spacing-md); /* 12px 16px default */
+
+    /* Border and Background */
+    border: none;
+    border-radius: var(--radius-xxs); /* 2px default */
+
+    /* Interaction */
+    cursor: pointer;
+    user-select: none;
+    text-decoration: none;
+    white-space: nowrap;
+
+    /* Transitions */
+    transition: background-color 0.2s ease,
+                color 0.2s ease,
+                border-color 0.2s ease,
+                border-radius 0.2s ease,
+                transform 0.1s ease;
+
+    /* Positioning for focus outline */
+    position: relative;
+}
+
+/* Remove default button styles */
+.btn::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+}
+
+/* Disabled cursor */
+.btn:disabled,
+.btn.disabled {
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+/* ===================================
+   ICON STYLING
+   =================================== */
+.btn__icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.375rem; /* 22px */
+    height: 1.375rem; /* 22px */
+    flex-shrink: 0;
+}
+
+.btn__icon svg {
+    width: 100%;
+    height: 100%;
+    fill: currentColor;
+}
+
+.btn__icon--trailing {
+    width: 1.5rem; /* 24px */
+    height: 1.5rem; /* 24px */
+}
+
+.btn__label {
+    display: inline-flex;
+    padding: 0 var(--spacing-xs); /* 0 8px - internal label padding */
+}
+
+/* ===================================
+   PRIMARY VARIANT
+   =================================== */
+.btn--primary {
+    background-color: var(--surface-action-default); /* #4e72a8 */
+    color: var(--text-on-action); /* #fafaf8 */
+    border: none;
+    border-radius: var(--radius-xxs); /* 2px */
+}
+
+/* Primary - Hover */
+.btn--primary:hover:not(:disabled) {
+    background-color: var(--surface-action-hover); /* #3b5a86 */
+    color: var(--text-on-action); /* #fafaf8 */
+}
+
+/* Primary - Pressed/Active */
+.btn--primary:active:not(:disabled),
+.btn--primary.is-pressed {
+    background-color: var(--surface-action-pressed); /* #2b4163 */
+    color: var(--text-on-action); /* #fafaf8 */
+    transform: translateY(1px);
+}
+
+/* Primary - Focus */
+.btn--primary:focus-visible {
+    background-color: var(--surface-action-hover); /* #3b5a86 */
+    outline: var(--outline-width-md) solid var(--outline-accent); /* 2px #ad4fc4 */
+    outline-offset: -0.25rem; /* -4px */
+}
+
+/* Primary - Disabled */
+.btn--primary:disabled,
+.btn--primary.disabled {
+    background-color: var(--surface-action-disabled); /* #a3a39d */
+    color: var(--text-on-disabled); /* #3f3f3b */
+}
+
+/* ===================================
+   OUTLINED VARIANT
+   =================================== */
+.btn--outlined {
+    background-color: transparent;
+    color: var(--text-inverse-01); /* #fafaf8 */
+    border: var(--outline-width-md) solid var(--outline-action-secondary-default); /* 2px solid #3b5a86 */
+    border-radius: var(--radius-xxs); /* 2px */
+}
+
+/* Outlined - Hover */
+.btn--outlined:hover:not(:disabled) {
+    background-color: var(--surface-inverse-01); /* #0b0b0a */
+    color: var(--text-action-hover); /* #2b4163 */
+    border-color: var(--outline-action-secondary-hover); /* #2b4163 */
+}
+
+/* Outlined - Pressed/Active */
+.btn--outlined:active:not(:disabled),
+.btn--outlined.is-pressed {
+    background-color: var(--surface-inverse-01); /* #0b0b0a */
+    color: var(--text-inverse-01); /* #fafaf8 */
+    border-color: var(--outline-action-secondary-disabled); /* #cbd9ea */
+}
+
+/* Outlined - Focus */
+.btn--outlined:focus-visible {
+    background-color: var(--surface-inverse-01); /* #0b0b0a */
+    color: var(--text-action-hover); /* #2b4163 */
+    border-color: var(--outline-action-secondary-hover); /* #2b4163 */
+    outline: var(--outline-width-md) solid var(--outline-accent); /* 2px #ad4fc4 */
+    outline-offset: -0.375rem; /* -6px - accounts for 2px border */
+}
+
+/* Outlined - Disabled */
+.btn--outlined:disabled,
+.btn--outlined.disabled {
+    background-color: transparent;
+    color: var(--text-action-disabled); /* #545450 */
+    border-color: var(--outline-action-secondary-disabled); /* #cbd9ea */
+}
+
+/* ===================================
+   TEXT VARIANT
+   =================================== */
+.btn--text {
+    background-color: transparent;
+    color: var(--text-01); /* #0b0b0a */
+    border: none;
+    border-radius: var(--radius-lg); /* 16px - default/disabled */
+    padding: var(--spacing-xxs); /* 4px all sides */
+}
+
+/* Text - Hover */
+.btn--text:hover:not(:disabled) {
+    background-color: var(--surface-04); /* #d5d5cf */
+    color: var(--text-01); /* #0b0b0a */
+    border-radius: var(--radius-xs); /* 4px - on hover */
+}
+
+/* Text - Pressed/Active */
+.btn--text:active:not(:disabled),
+.btn--text.is-pressed {
+    background-color: var(--surface-02); /* #f4f4f1 */
+    color: var(--text-01); /* #0b0b0a */
+    border-radius: var(--radius-xs); /* 4px */
+}
+
+/* Text - Focus */
+.btn--text:focus-visible {
+    background-color: var(--surface-04); /* #d5d5cf */
+    color: var(--text-01); /* #0b0b0a */
+    border-radius: var(--radius-xs); /* 4px */
+    outline: var(--outline-width-md) solid var(--outline-accent); /* 2px #ad4fc4 */
+    outline-offset: -0.25rem; /* -4px */
+}
+
+/* Text - Disabled */
+.btn--text:disabled,
+.btn--text.disabled {
+    background-color: transparent;
+    color: var(--text-action-disabled); /* #545450 */
+    border-radius: var(--radius-lg); /* 16px */
+}
+
+/* ===================================
+   ICON COLOR OVERRIDES BY VARIANT
+   =================================== */
+
+/* Primary Icons */
+.btn--primary .btn__icon {
+    color: var(--text-on-action); /* #fafaf8 */
+}
+
+.btn--primary:disabled .btn__icon,
+.btn--primary.disabled .btn__icon {
+    color: var(--text-on-disabled); /* #3f3f3b */
+}
+
+/* Outlined Icons */
+.btn--outlined .btn__icon {
+    color: var(--text-inverse-01); /* #fafaf8 - default */
+}
+
+.btn--outlined:hover:not(:disabled) .btn__icon,
+.btn--outlined:focus-visible .btn__icon {
+    color: var(--outline-action-secondary-default); /* #3b5a86 */
+}
+
+.btn--outlined:active:not(:disabled) .btn__icon,
+.btn--outlined.is-pressed .btn__icon {
+    color: var(--text-inverse-01); /* #fafaf8 */
+}
+
+.btn--outlined:disabled .btn__icon,
+.btn--outlined.disabled .btn__icon {
+    color: var(--surface-action-disabled); /* #a3a39d */
+}
+
+/* Text Icons */
+.btn--text .btn__icon {
+    color: var(--text-01); /* #0b0b0a */
+}
+
+.btn--text:disabled .btn__icon,
+.btn--text.disabled .btn__icon {
+    color: var(--surface-action-disabled); /* #a3a39d */
+}
+
+/* ===================================
+   SIZE VARIANTS (Optional)
+   =================================== */
+.btn--sm {
+    font-size: var(--font-size-label-sm); /* 14px */
+    line-height: var(--line-height-label-sm); /* 20px */
+    padding: var(--spacing-xs) var(--spacing-sm); /* 8px 12px */
+}
+
+.btn--lg {
+    font-size: var(--font-size-label-lg); /* 18px */
+    line-height: var(--line-height-label-lg); /* 28px */
+    padding: var(--spacing-md) var(--spacing-xl); /* 16px 24px */
+}
+
+/* ===================================
+   FULL WIDTH VARIANT
+   =================================== */
+.btn--full {
+    width: 100%;
+    justify-content: center;
+}
+
+/* ===================================
+   REDUCED MOTION SUPPORT
+   =================================== */
+@media (prefers-reduced-motion: reduce) {
+    .btn {
+        transition: none;
+    }
+}
+
+/* ===================================
+   LOADING STATE (Optional)
+   =================================== */
+.btn--loading {
+    position: relative;
+    color: transparent;
+    pointer-events: none;
+}
+
+.btn--loading::after {
+    content: '';
+    position: absolute;
+    width: 1rem;
+    height: 1rem;
+    top: 50%;
+    left: 50%;
+    margin-left: -0.5rem;
+    margin-top: -0.5rem;
+    border: 2px solid currentColor;
+    border-radius: 50%;
+    border-top-color: transparent;
+    animation: btn-spinner 0.6s linear infinite;
+    color: var(--text-on-action);
+}
+
+@keyframes btn-spinner {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* ===================================
+   PRINT STYLES
+   =================================== */
+@media print {
+    .btn {
+        border: 1px solid var(--outline-01);
+        background: none;
+        color: var(--text-01);
+    }
+}

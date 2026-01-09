@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card Component Examples - IXI Labs</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="/css/variables.css">
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/card.css">
+
+    <style>
+        body {
+            padding: var(--spacing-super);
+            background: var(--surface-03);
+        }
+
+        .example-section {
+            margin-bottom: var(--spacing-super-lg);
+        }
+
+        .example-section h2 {
+            margin-bottom: var(--spacing-xl);
+            color: var(--text-01);
+        }
+
+        .example-section p {
+            margin-bottom: var(--spacing-lg);
+            color: var(--text-02);
+        }
+
+        .card-showcase {
+            display: flex;
+            gap: var(--spacing-xl);
+            flex-wrap: wrap;
+        }
+    </style>
+</head>
+<body>
+    <h1>Card Component Examples</h1>
+    <p>All card variants and usage patterns for the IXI Labs website.</p>
+
+    <!-- ===================================
+         BASIC CARD
+         =================================== -->
+    <section class="example-section">
+        <h2>Basic Card</h2>
+        <p>Standard card with all content sections.</p>
+
+        <div class="card-showcase">
+            <article class="card">
+                <div class="card__content">
+                    <!-- Icon -->
+                    <div class="card__icon" aria-hidden="true">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="12" cy="12" r="2" fill="currentColor"/>
+                            <circle cx="12" cy="12" r="8" stroke="currentColor" stroke-width="2" fill="none"/>
+                            <path d="M4 12C4 12 6 8 12 8C18 8 20 12 20 12" stroke="currentColor" stroke-width="2" fill="none"/>
+                        </svg>
+                    </div>
+
+                    <!-- Title -->
+                    <h3 class="card__title">Quantum-Resistant Security</h3>
+
+                    <!-- Description -->
+                    <p class="card__description">Advanced cryptographic protocols designed to withstand quantum computing attacks, ensuring long-term data protection.</p>
+
+                    <!-- Outcome Description -->
+                    <p class="card__outcome">Future-proof encryption that maintains security as quantum computing evolves.</p>
+                </div>
+
+                <!-- Learn More Link -->
+                <a href="#" class="card__link">
+                    <span>Learn more</span>
+                    <span class="card__arrow">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </span>
+                </a>
+            </article>
+        </div>
+    </section>
+
+    <!-- ===================================
+         CARD WITHOUT ICON
+         =================================== -->
+    <section class="example-section">
+        <h2>Card Without Icon</h2>
+        <p>Card without the decorative top icon.</p>
+
+        <div class="card-showcase">
+            <article class="card">
+                <div class="card__content">
+                    <!-- Title -->
+                    <h3 class="card__title">Decentralized Architecture</h3>
+
+                    <!-- Description -->
+                    <p class="card__description">No single point of failure. Our distributed network ensures continuous availability and resilience.</p>
+
+                    <!-- Outcome Description -->
+                    <p class="card__outcome">99.99% uptime with automatic failover and redundancy built in.</p>
+                </div>
+
+                <!-- Learn More Link -->
+                <a href="#" class="card__link">
+                    <span>Learn more</span>
+                    <span class="card__arrow">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </span>
+                </a>
+            </article>
+        </div>
+    </section>
+
+    <!-- ===================================
+         CARD WITH CUSTOM LINK TEXT
+         =================================== -->
+    <section class="example-section">
+        <h2>Card With Custom Link Text</h2>
+        <p>Card with custom call-to-action text.</p>
+
+        <div class="card-showcase">
+            <article class="card">
+                <div class="card__content">
+                    <!-- Icon -->
+                    <div class="card__icon" aria-hidden="true">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" stroke="currentColor" stroke-width="2" fill="none"/>
+                            <polyline points="3.27 6.96 12 12.01 20.73 6.96" stroke="currentColor" stroke-width="2" fill="none"/>
+                            <line x1="12" y1="22.08" x2="12" y2="12" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                    </div>
+
+                    <!-- Title -->
+                    <h3 class="card__title">Production-Ready Platform</h3>
+
+                    <!-- Description -->
+                    <p class="card__description">Battle-tested infrastructure deployed in critical systems worldwide.</p>
+
+                    <!-- Outcome Description -->
+                    <p class="card__outcome">Trusted by enterprises for mission-critical applications.</p>
+                </div>
+
+                <!-- Learn More Link -->
+                <a href="#" class="card__link">
+                    <span>View case studies</span>
+                    <span class="card__arrow">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </span>
+                </a>
+            </article>
+        </div>
+    </section>
+
+    <!-- ===================================
+         CLICKABLE CARD
+         =================================== -->
+    <section class="example-section">
+        <h2>Clickable Card (Entire Card)</h2>
+        <p>Entire card is clickable, with cursor pointer on hover.</p>
+
+        <div class="card-showcase">
+            <a href="#" class="card card--clickable" style="text-decoration: none; color: inherit;">
+                <div class="card__content">
+                    <!-- Icon -->
+                    <div class="card__icon" aria-hidden="true">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" stroke-width="2" fill="none"/>
+                            <path d="M9 9l6 6M15 9l-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+
+                    <!-- Title -->
+                    <h3 class="card__title">Open Source</h3>
+
+                    <!-- Description -->
+                    <p class="card__description">Full transparency with auditable code. Community-driven development ensures continuous improvement.</p>
+
+                    <!-- Outcome Description -->
+                    <p class="card__outcome">Join thousands of developers contributing to the ecosystem.</p>
+                </div>
+
+                <!-- Learn More Link -->
+                <span class="card__link">
+                    <span>Explore GitHub</span>
+                    <span class="card__arrow">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </span>
+                </span>
+            </a>
+        </div>
+    </section>
+
+    <!-- ===================================
+         CARD GRID (3 COLUMNS)
+         =================================== -->
+    <section class="example-section">
+        <h2>Card Grid (3 Columns)</h2>
+        <p>Responsive grid of cards - 3 columns on desktop, 2 on tablet, 1 on mobile.</p>
+
+        <div class="card-grid">
+            <!-- Card 1 -->
+            <article class="card">
+                <div class="card__content">
+                    <div class="card__icon" aria-hidden="true">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" fill="none"/>
+                            <path d="M12 6v6l4 2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <h3 class="card__title">Real-Time Processing</h3>
+                    <p class="card__description">Instant transaction validation with sub-second finality.</p>
+                    <p class="card__outcome">High-performance infrastructure for time-critical applications.</p>
+                </div>
+                <a href="#" class="card__link">
+                    <span>Learn more</span>
+                    <span class="card__arrow">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </span>
+                </a>
+            </article>
+
+            <!-- Card 2 -->
+            <article class="card">
+                <div class="card__content">
+                    <div class="card__icon" aria-hidden="true">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2L2 7l10 5 10-5-10-5z" stroke="currentColor" stroke-width="2" fill="none"/>
+                            <path d="M2 17l10 5 10-5M2 12l10 5 10-5" stroke="currentColor" stroke-width="2" fill="none"/>
+                        </svg>
+                    </div>
+                    <h3 class="card__title">Scalable Infrastructure</h3>
+                    <p class="card__description">Grows with your needs from prototype to global deployment.</p>
+                    <p class="card__outcome">Seamless scaling without architecture changes or downtime.</p>
+                </div>
+                <a href="#" class="card__link">
+                    <span>Learn more</span>
+                    <span class="card__arrow">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </span>
+                </a>
+            </article>
+
+            <!-- Card 3 -->
+            <article class="card">
+                <div class="card__content">
+                    <div class="card__icon" aria-hidden="true">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="currentColor" stroke-width="2" fill="none"/>
+                        </svg>
+                    </div>
+                    <h3 class="card__title">Enterprise Security</h3>
+                    <p class="card__description">Military-grade encryption with comprehensive audit trails.</p>
+                    <p class="card__outcome">Compliance-ready for regulated industries and government use.</p>
+                </div>
+                <a href="#" class="card__link">
+                    <span>Learn more</span>
+                    <span class="card__arrow">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </span>
+                </a>
+            </article>
+        </div>
+    </section>
+
+    <!-- ===================================
+         CARD GRID (2 COLUMNS)
+         =================================== -->
+    <section class="example-section">
+        <h2>Card Grid (2 Columns)</h2>
+        <p>Alternative grid layout with 2 columns on desktop.</p>
+
+        <div class="card-grid card-grid--2">
+            <!-- Card 1 -->
+            <article class="card">
+                <div class="card__content">
+                    <div class="card__icon" aria-hidden="true">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" stroke="currentColor" stroke-width="2" fill="none"/>
+                            <circle cx="9" cy="7" r="4" stroke="currentColor" stroke-width="2" fill="none"/>
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" stroke="currentColor" stroke-width="2" fill="none"/>
+                        </svg>
+                    </div>
+                    <h3 class="card__title">Developer Experience</h3>
+                    <p class="card__description">Comprehensive SDKs, clear documentation, and active support channels.</p>
+                    <p class="card__outcome">Build faster with intuitive APIs and extensive code examples.</p>
+                </div>
+                <a href="#" class="card__link">
+                    <span>Start building</span>
+                    <span class="card__arrow">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </span>
+                </a>
+            </article>
+
+            <!-- Card 2 -->
+            <article class="card">
+                <div class="card__content">
+                    <div class="card__icon" aria-hidden="true">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" stroke="currentColor" stroke-width="2" fill="none"/>
+                        </svg>
+                    </div>
+                    <h3 class="card__title">Performance Monitoring</h3>
+                    <p class="card__description">Real-time metrics and analytics dashboards for complete visibility.</p>
+                    <p class="card__outcome">Proactive alerts and detailed insights for optimal system health.</p>
+                </div>
+                <a href="#" class="card__link">
+                    <span>View dashboard</span>
+                    <span class="card__arrow">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </span>
+                </a>
+            </article>
+        </div>
+    </section>
+
+</body>
+</html>

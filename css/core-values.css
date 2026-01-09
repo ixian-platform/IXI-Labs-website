@@ -1,0 +1,8 @@
+/* ===================================
+   CORE VALUES SECTION
+   =================================== */
+
+.core-values {
+    position: relative;
+    background-color: var(--surface-02);
+}

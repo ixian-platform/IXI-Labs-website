@@ -1,0 +1,302 @@
+/* ===================================
+   CARD COMPONENT
+   Production-ready, accessible card component
+   Figma: https://www.figma.com/design/rKffzKIeP4ZlkTM6GeClpq/IXI-Labs-website-v2?node-id=2062-1223
+   =================================== */
+
+/* ===================================
+   BASE CARD STYLES
+   =================================== */
+.card {
+    /* Layout */
+    display: flex;
+    flex-direction: column;
+    width: 25.6875rem; /* 411px */
+    min-height: 15.9375rem; /* 255px */
+
+    /* Spacing */
+    padding: var(--spacing-3xl) var(--spacing-lg); /* 40px 20px */
+    gap: 0.625rem; /* 10px - gap before "Learn more" */
+
+    /* Surface */
+    background-color: var(--surface-01); /* #fafaf8 */
+    border: var(--outline-width-sm) solid var(--outline-01); /* 1px solid #d5d5cf */
+    border-radius: var(--radius-lg); /* 16px */
+
+    /* Interaction */
+    transition: background-color 0.2s ease;
+
+    /* Box sizing */
+    box-sizing: border-box;
+}
+
+/* Hover state */
+.card:hover {
+    background-color: var(--surface-02); /* #f4f4f1 */
+}
+
+/* If card is clickable (entire card) */
+.card--clickable {
+    cursor: pointer;
+}
+
+/* ===================================
+   CARD CONTENT CONTAINER
+   =================================== */
+.card__content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md); /* 16px - gap between main content items */
+    flex: 1;
+}
+
+/* ===================================
+   CARD ICON
+   =================================== */
+.card__icon {
+    width: 1.5rem; /* 24px */
+    height: 1.5rem; /* 24px */
+    color: var(--text-01); /* #0b0b0a */
+    flex-shrink: 0;
+}
+
+.card__icon svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+/* ===================================
+   CARD TITLE
+   =================================== */
+.card__title {
+    /* Typography - heading/md */
+    font-family: var(--font-secondary); /* Inter */
+    font-weight: var(--font-weight-bold); /* 700 */
+    font-size: var(--font-size-heading-md); /* 24px */
+    line-height: var(--line-height-heading-md); /* 28px */
+    letter-spacing: var(--letter-spacing-heading-md); /* -1px */
+
+    /* Color */
+    color: var(--text-01); /* #0b0b0a */
+
+    /* Reset */
+    margin: 0;
+}
+
+/* ===================================
+   CARD DESCRIPTION
+   =================================== */
+.card__description {
+    /* Typography - body/sm */
+    font-family: var(--font-secondary); /* Inter */
+    font-weight: var(--font-weight-regular); /* 400 */
+    font-size: var(--font-size-body-sm); /* 14px */
+    line-height: var(--line-height-body-sm); /* 20px */
+    letter-spacing: var(--letter-spacing-body-sm); /* 0px */
+
+    /* Color */
+    color: var(--text-01); /* #0b0b0a */
+
+    /* Reset */
+    margin: 0;
+}
+
+/* ===================================
+   CARD OUTCOME DESCRIPTION
+   =================================== */
+.card__outcome {
+    /* Typography - body/sm (same as description) */
+    font-family: var(--font-secondary); /* Inter */
+    font-weight: var(--font-weight-regular); /* 400 */
+    font-size: var(--font-size-body-sm); /* 14px */
+    line-height: var(--line-height-body-sm); /* 20px */
+    letter-spacing: var(--letter-spacing-body-sm); /* 0px */
+
+    /* Color */
+    color: var(--text-01); /* #0b0b0a */
+
+    /* Reset */
+    margin: 0;
+}
+
+/* ===================================
+   LEARN MORE LINK
+   =================================== */
+.card__link {
+    /* Layout */
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-xxs); /* 4px - small gap between text and arrow */
+
+    /* Spacing */
+    padding: var(--spacing-xxs) 0; /* 4px vertical */
+
+    /* Appearance */
+    border-radius: var(--radius-lg); /* 16px */
+
+    /* Typography - label/sm */
+    font-family: var(--font-secondary); /* Inter */
+    font-weight: var(--font-weight-semibold); /* 600 */
+    font-size: var(--font-size-label-sm); /* 14px */
+    line-height: var(--line-height-label-sm); /* 20px */
+    letter-spacing: var(--letter-spacing-label-sm); /* -0.5px */
+
+    /* Color */
+    color: var(--text-link); /* #04070b */
+
+    /* Interaction */
+    text-decoration: none;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+
+    /* Ensure it's at the end of the card */
+    align-self: flex-start;
+}
+
+.card__link:hover {
+    opacity: 0.8;
+}
+
+.card__link:focus-visible {
+    outline: var(--outline-width-md) solid var(--outline-accent); /* Purple focus ring */
+    outline-offset: 0.125rem;
+}
+
+/* Link as button (when used with onclick instead of href) */
+button.card__link {
+    background: transparent;
+    border: none;
+    font: inherit;
+    margin: 0;
+}
+
+/* ===================================
+   ARROW ICON
+   =================================== */
+.card__arrow {
+    width: 1rem; /* 16px */
+    height: 1rem; /* 16px */
+    flex-shrink: 0;
+}
+
+.card__arrow svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+/* ===================================
+   RESPONSIVE BEHAVIOR
+   =================================== */
+
+/* Tablet: Allow card to shrink but maintain max-width */
+@media (max-width: 64rem) {
+    .card {
+        width: 100%;
+        max-width: 25.6875rem; /* 411px */
+    }
+}
+
+/* Mobile: Reduce padding */
+@media (max-width: 48rem) {
+    .card {
+        padding: var(--spacing-xl) var(--spacing-md); /* 24px 16px */
+    }
+}
+
+/* ===================================
+   ACCESSIBILITY
+   =================================== */
+
+/* Ensure keyboard navigation works */
+.card__link:focus {
+    outline: none;
+}
+
+/* Ensure screen readers can understand the structure */
+.card__icon[aria-hidden="true"] {
+    pointer-events: none;
+}
+
+/* ===================================
+   PRINT STYLES
+   =================================== */
+@media print {
+    .card {
+        background: white;
+        border-color: #000;
+        page-break-inside: avoid;
+    }
+
+    .card:hover {
+        background: white;
+    }
+}
+
+/* ===================================
+   REDUCED MOTION SUPPORT
+   =================================== */
+@media (prefers-reduced-motion: reduce) {
+    .card,
+    .card__link {
+        transition: none;
+    }
+}
+
+/* ===================================
+   CARD GRID LAYOUTS
+   =================================== */
+
+/* Container for multiple cards */
+.card-grid {
+    display: grid;
+    gap: var(--spacing-xl); /* 24px */
+}
+
+/* 1 column on mobile */
+.card-grid {
+    grid-template-columns: 1fr;
+}
+
+/* 2 columns on tablet */
+@media (min-width: 48rem) {
+    .card-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* 3 columns on desktop */
+@media (min-width: 64rem) {
+    .card-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* 2 columns variant (for specific sections) */
+.card-grid--2 {
+    grid-template-columns: 1fr;
+}
+
+@media (min-width: 48rem) {
+    .card-grid--2 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* 4 columns variant (for specific sections) */
+.card-grid--4 {
+    grid-template-columns: 1fr;
+}
+
+@media (min-width: 48rem) {
+    .card-grid--4 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 80rem) {
+    .card-grid--4 {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}

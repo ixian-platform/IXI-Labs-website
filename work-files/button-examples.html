@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Button Component Examples - IXI Labs</title>
+
+    <!-- Preconnect to font providers -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="/css/variables.css">
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/button.css">
+
+    <style>
+        /* Demo page styles */
+        .demo-section {
+            padding: var(--spacing-super) 0;
+            border-bottom: 1px solid var(--outline-01);
+        }
+
+        .demo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--spacing-xl);
+            margin-top: var(--spacing-lg);
+        }
+
+        .demo-item {
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-sm);
+        }
+
+        .demo-item code {
+            font-size: var(--font-size-body-sm);
+            color: var(--text-02);
+            background: var(--surface-02);
+            padding: var(--spacing-xxs) var(--spacing-xs);
+            border-radius: var(--radius-xs);
+            font-family: 'Courier New', monospace;
+        }
+
+        .section-dark-bg {
+            background-color: var(--surface-dark-01);
+            padding: var(--spacing-xl);
+            border-radius: var(--radius-md);
+            margin-top: var(--spacing-lg);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header style="padding: var(--spacing-super) 0;">
+            <h1 class="display-md">Button Component Examples</h1>
+            <p class="body-lg">All variants, states, and icon configurations</p>
+        </header>
+
+        <!-- PRIMARY VARIANT -->
+        <section class="demo-section">
+            <h2 class="heading-lg">Primary Variant</h2>
+            <p class="body-md">Filled background with action color</p>
+
+            <div class="demo-grid">
+                <div class="demo-item">
+                    <button class="btn btn--primary">Label</button>
+                    <code>btn btn--primary</code>
+                </div>
+
+                <div class="demo-item">
+                    <button class="btn btn--primary">
+                        <span class="btn__icon">
+                            <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+                                <path d="M11 15L6 10L7.4 8.55L10 11.15V3H12V11.15L14.6 8.55L16 10L11 15ZM4 19C3.45 19 2.979 18.804 2.587 18.412C2.195 18.02 1.99934 17.5493 2 17V14H4V17H18V14H20V17C20 17.55 19.804 18.021 19.412 18.413C19.02 18.805 18.5493 19.0007 18 19H4Z" fill="currentColor"/>
+                            </svg>
+                        </span>
+                        <span class="btn__label">Download</span>
+                    </button>
+                    <code>with leading icon</code>
+                </div>
+
+                <div class="demo-item">
+                    <button class="btn btn--primary">
+                        <span class="btn__label">Next</span>
+                        <span class="btn__icon btn__icon--trailing">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <path d="M12.6 12L8.7 8.1L10 6.8L15.2 12L10 17.2L8.7 15.9L12.6 12Z" fill="currentColor"/>
+                            </svg>
+                        </span>
+                    </button>
+                    <code>with trailing icon</code>
+                </div>
+
+                <div class="demo-item">
+                    <button class="btn btn--primary">
+                        <span class="btn__icon">
+                            <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+                                <path d="M11 15L6 10L7.4 8.55L10 11.15V3H12V11.15L14.6 8.55L16 10L11 15ZM4 19C3.45 19 2.979 18.804 2.587 18.412C2.195 18.02 1.99934 17.5493 2 17V14H4V17H18V14H20V17C20 17.55 19.804 18.021 19.412 18.413C19.02 18.805 18.5493 19.0007 18 19H4Z" fill="currentColor"/>
+                            </svg>
+                        </span>
+                        <span class="btn__label">Download</span>
+                        <span class="btn__icon btn__icon--trailing">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <path d="M12.6 12L8.7 8.1L10 6.8L15.2 12L10 17.2L8.7 15.9L12.6 12Z" fill="currentColor"/>
+                            </svg>
+                        </span>
+                    </button>
+                    <code>with both icons</code>
+                </div>
+
+                <div class="demo-item">
+                    <button class="btn btn--primary" disabled>Disabled</button>
+                    <code>disabled state</code>
+                </div>
+            </div>
+        </section>
+
+        <!-- OUTLINED VARIANT -->
+        <section class="demo-section section-dark-bg">
+            <h2 class="heading-lg" style="color: var(--text-dark-01);">Outlined Variant</h2>
+            <p class="body-md" style="color: var(--text-dark-02);">Border with transparent/dark background</p>
+
+            <div class="demo-grid">
+                <div class="demo-item">
+                    <button class="btn btn--outlined">Label</button>
+                    <code>btn btn--outlined</code>
+                </div>
+
+                <div class="demo-item">
+                    <button class="btn btn--outlined">
+                        <span class="btn__icon">
+                            <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+                                <path d="M11 15L6 10L7.4 8.55L10 11.15V3H12V11.15L14.6 8.55L16 10L11 15ZM4 19C3.45 19 2.979 18.804 2.587 18.412C2.195 18.02 1.99934 17.5493 2 17V14H4V17H18V14H20V17C20 17.55 19.804 18.021 19.412 18.413C19.02 18.805 18.5493 19.0007 18 19H4Z" fill="currentColor"/>
+                            </svg>
+                        </span>
+                        <span class="btn__label">Download</span>
+                    </button>
+                    <code>with leading icon</code>
+                </div>
+
+                <div class="demo-item">
+                    <button class="btn btn--outlined">
+                        <span class="btn__label">Next</span>
+                        <span class="btn__icon btn__icon--trailing">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <path d="M12.6 12L8.7 8.1L10 6.8L15.2 12L10 17.2L8.7 15.9L12.6 12Z" fill="currentColor"/>
+                            </svg>
+                        </span>
+                    </button>
+                    <code>with trailing icon</code>
+                </div>
+
+                <div class="demo-item">
+                    <button class="btn btn--outlined" disabled>Disabled</button>
+                    <code>disabled state</code>
+                </div>
+            </div>
+        </section>
+
+        <!-- TEXT VARIANT -->
+        <section class="demo-section">
+            <h2 class="heading-lg">Text Variant</h2>
+            <p class="body-md">No background, minimal styling</p>
+
+            <div class="demo-grid">
+                <div class="demo-item">
+                    <button class="btn btn--text">Label</button>
+                    <code>btn btn--text</code>
+                </div>
+
+                <div class="demo-item">
+                    <button class="btn btn--text">
+                        <span class="btn__icon">
+                            <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+                                <path d="M11 15L6 10L7.4 8.55L10 11.15V3H12V11.15L14.6 8.55L16 10L11 15ZM4 19C3.45 19 2.979 18.804 2.587 18.412C2.195 18.02 1.99934 17.5493 2 17V14H4V17H18V14H20V17C20 17.55 19.804 18.021 19.412 18.413C19.02 18.805 18.5493 19.0007 18 19H4Z" fill="currentColor"/>
+                            </svg>
+                        </span>
+                        <span class="btn__label">Download</span>
+                    </button>
+                    <code>with leading icon</code>
+                </div>
+
+                <div class="demo-item">
+                    <button class="btn btn--text">
+                        <span class="btn__label">Next</span>
+                        <span class="btn__icon btn__icon--trailing">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <path d="M12.6 12L8.7 8.1L10 6.8L15.2 12L10 17.2L8.7 15.9L12.6 12Z" fill="currentColor"/>
+                            </svg>
+                        </span>
+                    </button>
+                    <code>with trailing icon</code>
+                </div>
+
+                <div class="demo-item">
+                    <button class="btn btn--text" disabled>Disabled</button>
+                    <code>disabled state</code>
+                </div>
+            </div>
+        </section>
+
+        <!-- SIZE VARIANTS -->
+        <section class="demo-section">
+            <h2 class="heading-lg">Size Variants</h2>
+            <p class="body-md">Small, medium (default), and large sizes</p>
+
+            <div style="display: flex; gap: var(--spacing-lg); align-items: center; margin-top: var(--spacing-lg);">
+                <button class="btn btn--primary btn--sm">Small</button>
+                <button class="btn btn--primary">Medium (default)</button>
+                <button class="btn btn--primary btn--lg">Large</button>
+            </div>
+        </section>
+
+        <!-- FULL WIDTH -->
+        <section class="demo-section">
+            <h2 class="heading-lg">Full Width</h2>
+            <p class="body-md">Spans full container width</p>
+
+            <div style="margin-top: var(--spacing-lg); max-width: 400px;">
+                <button class="btn btn--primary btn--full">Full Width Button</button>
+            </div>
+        </section>
+
+        <!-- INTERACTIVE STATES -->
+        <section class="demo-section">
+            <h2 class="heading-lg">Interactive States</h2>
+            <p class="body-md">Hover, focus (keyboard), active/pressed states</p>
+
+            <div class="demo-grid" style="margin-top: var(--spacing-lg);">
+                <div class="demo-item">
+                    <button class="btn btn--primary">Hover me</button>
+                    <code>:hover state</code>
+                </div>
+
+                <div class="demo-item">
+                    <button class="btn btn--primary">Tab to focus</button>
+                    <code>:focus-visible</code>
+                </div>
+
+                <div class="demo-item">
+                    <button class="btn btn--primary">Click and hold</button>
+                    <code>:active state</code>
+                </div>
+            </div>
+        </section>
+
+        <!-- AS LINK -->
+        <section class="demo-section">
+            <h2 class="heading-lg">As Link Element</h2>
+            <p class="body-md">Using &lt;a&gt; tag with button styles</p>
+
+            <div style="margin-top: var(--spacing-lg); display: flex; gap: var(--spacing-lg);">
+                <a href="#" class="btn btn--primary">Link Button</a>
+                <a href="#" class="btn btn--outlined">Outlined Link</a>
+                <a href="#" class="btn btn--text">Text Link</a>
+            </div>
+        </section>
+
+        <footer style="padding: var(--spacing-super) 0; text-align: center;">
+            <p class="body-sm" style="color: var(--text-02);">
+                Button Component - IXI Labs Design System
+            </p>
+        </footer>
+    </div>
+</body>
+</html>

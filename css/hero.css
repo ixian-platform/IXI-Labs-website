@@ -1,0 +1,9 @@
+/* ===================================
+   HERO COMPONENT
+   =================================== */
+
+.hero {
+    position: relative;
+    background-color: var(--surface-inverse-01);
+    color: var(--text-inverse-01);
+}

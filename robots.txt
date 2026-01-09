@@ -1,0 +1,6 @@
+# robots.txt for www.ixilabs.com
+
+User-agent: *
+Allow: /
+
+Sitemap: https://www.ixilabs.com/sitemap.xml

@@ -1,0 +1,5 @@
+# GitHub Pages configuration for clean URLs
+permalink: pretty
+
+# Disable Jekyll processing (we're using static HTML)
+plugins: []
