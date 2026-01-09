@@ -188,11 +188,11 @@ svg {
    LAYOUT SYSTEM
    =================================== */
 
-/* Container for content - 1280px max-width with 20px horizontal margin */
+/* Container for content - 1280px max-width with no horizontal padding so content aligns to grid lines */
 .container {
     max-width: 80rem; /* 1280px */
     margin: 0 auto;
-    padding: 0 var(--spacing-lg); /* 20px horizontal */
+    padding: 0; /* no horizontal padding */
 }
 
 /* All sections get 100px vertical padding except hero */
@@ -484,7 +484,7 @@ section:not(.hero) {
 .card {
     display: flex;
     flex-direction: column;
-    width: 25.6875rem;
+    width: 100%;
     min-height: 15.9375rem;
     padding: var(--spacing-3xl) var(--spacing-lg);
     gap: 0.625rem;
@@ -602,9 +602,8 @@ button.card__link {
 @media (max-width: 64rem) {
     .card {
         width: 100%;
-        max-width: 25.6875rem;
     }
-}
+} 
 
 @media (max-width: 48rem) {
     .card {
@@ -617,9 +616,13 @@ button.card__link {
    =================================== */
 .hero {
     position: relative;
-    background-color: var(--surface-inverse-01);
+    /* Animated radial gradient background (subtle motion) */
+    background: var(--radial1, radial-gradient(137.88% 107.93% at 9.62% 22.33%, rgba(72, 108, 255, 0.07) 0%, rgba(0, 0, 0, 0.00) 100%), #0C0F14);
+    background-size: 200% 200%;
     color: var(--text-inverse-01);
+    overflow: hidden;
     height: 40rem; /* 640px - mobile */
+    animation: heroRadial 30s linear infinite;
 }
 
 @media (min-width: 48rem) {
@@ -631,13 +634,33 @@ button.card__link {
 .hero__container {
     max-width: 80rem; /* 1280px */
     margin: 0 auto;
-    padding: 0 var(--spacing-lg); /* 20px horizontal */
+    padding: 0; /* remove horizontal padding so content aligns to grid lines; bottom padding kept separately */
     padding-bottom: var(--spacing-super-xl); /* 100px bottom margin */
     height: 100%;
     position: relative;
     display: flex;
     align-items: flex-end;
 }
+
+@keyframes heroRadial {
+    0% { background-position: 10% 10%; }
+    50% { background-position: 90% 30%; }
+    100% { background-position: 10% 10%; }
+}
+
+/* Stack graphics fade transitions (hero -> core-values) */
+.stack-graphic {
+    transition: opacity 600ms cubic-bezier(.4,0,.2,1), transform 600ms cubic-bezier(.4,0,.2,1);
+    opacity: 1;
+    transform: translateY(0);
+    will-change: opacity, transform;
+}
+
+.stack-graphic.hidden {
+    opacity: 0;
+    transform: translateY(12px);
+    pointer-events: none;
+} 
 
 /* Grid lines background */
 .hero__grid-bg {
@@ -659,7 +682,7 @@ button.card__link {
     bottom: 0;
     width: 1px;
     background: var(--outline-action-primary-default); /* #3B5A86 */
-    opacity: 0.75;
+    opacity: 0.2;
 }
 
 /* Desktop: 5 lines creating 4 equal bands */
@@ -844,22 +867,36 @@ button.card__link {
 .core-values__container {
     max-width: 80rem; /* 1280px */
     margin: 0 auto;
-    padding: 0 var(--spacing-lg); /* 20px horizontal */
+    padding: 0; /* remove horizontal padding so content aligns to grid lines */
     position: relative;
 }
 
-/* Grid lines background */
+/* Grid lines background (hidden on light section to match reference) */
 .core-values__grid-bg {
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 100%;
-    max-width: 80rem; /* 1280px */
-    height: 100%;
-    pointer-events: none;
-    z-index: 0;
+    display: none;
 }
+
+/* Desktop: 4 columns */
+@media (min-width: 64rem) {
+    .core-values__cards {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/* Remove duplicate per-card borders — separators are rendered by pseudo-elements to ensure uniform thickness */
+.core-values__cards .card + .card {
+    border-left: none;
+}
+
+/* Remove per-card left borders that caused doubled/thicker borders on the leftmost column */
+@media (min-width: 64rem) {
+    .core-values__cards .card:nth-child(4n + 1) {
+        border-left: none;
+    }
+    .core-values__cards .card:nth-child(3n + 1) {
+        border-left: none;
+    }
+} 
 
 /* Individual grid lines */
 .core-values__grid-line {
@@ -868,7 +905,7 @@ button.card__link {
     bottom: 0;
     width: 1px;
     background: var(--outline-02); /* #A3A39D - light background */
-    opacity: 0.75;
+    opacity: 0.2;
 }
 
 /* Desktop: 5 lines creating 4 equal bands */
@@ -914,8 +951,8 @@ button.card__link {
 /* Cards grid */
 .core-values__cards {
     display: grid;
-    gap: var(--spacing-xl); /* 24px */
-    margin-top: var(--spacing-super); /* 80px - spacing from section intro */
+    gap: 0; /* No gap - cards sit flush */
+    margin-top: var(--spacing-super); /* 64px - spacing from section intro */
     grid-template-columns: 1fr; /* Mobile: 1 column */
 }
 
@@ -930,6 +967,97 @@ button.card__link {
 @media (min-width: 64rem) {
     .core-values__cards {
         grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Core values layout: content + graphic (left column occupies 75% of width at desktop)
+   The left column holds the intro and the three-card grid so the cards visually fill 3/4 of the container. */
+.core-values__content {
+    display: grid;
+    grid-template-columns: 1fr; /* mobile single column */
+    gap: var(--spacing-super);
+}
+
+@media (min-width: 48rem) {
+    .core-values__content {
+        grid-template-columns: 3fr 1fr; /* left 75%, right 25% */
+        align-items: start;
+    }
+}
+
+.core-values__main .section-intro {
+    max-width: none; /* allow intro to span left column */
+}
+
+.core-values__graphic {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.core-values__graphic-svg {
+    width: 100%;
+    max-width: 28rem;
+    height: auto;
+}
+
+/* Remove duplicate borders between cards */
+.core-values__cards .card + .card {
+    border-left: none;
+}
+
+/* Desktop: ensure no per-card left borders to avoid doubled/thick borders */
+@media (min-width: 64rem) {
+    .core-values__cards .card:nth-child(3n + 1) {
+        border-left: none;
+    }
+}
+
+/* Light-section card styling: single container with square internal cells */
+.core-values__cards {
+    border: var(--outline-width-sm) solid var(--outline-01);
+    border-radius: 0; /* 0px radius per requirement */
+    overflow: hidden; /* keep inner cards square */
+    gap: 0; /* ensure cells are flush */
+}
+
+@media (min-width: 64rem) {
+    .core-values__cards {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Cards inside the rounded container */
+.core-values__cards .card,
+.partnerships-section .card,
+.partners-section .card {
+    background-color: var(--surface-01);
+    border: none; /* no per-card border when container provides outer border */
+    border-radius: 0; /* internal corners are square */
+    padding: var(--spacing-3xl) var(--spacing-lg);
+}
+
+/* Remove direct border-left between cards; replace with inset separators (shorter than full height) at larger breakpoints */
+.core-values__cards .card + .card,
+.partnerships-section .card + .card,
+.partners-section .card + .card {
+    border-left: none;
+}
+
+@media (min-width: 48rem) {
+    .core-values__cards .card + .card {
+        position: relative;
+    }
+
+    /* Full-height separators between cards (uniform thickness) */
+    .core-values__cards .card + .card::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0; /* span full height */
+        bottom: 0; /* span full height */
+        width: var(--outline-width-sm);
+        background: var(--outline-01);
     }
 }
 

@@ -122,10 +122,11 @@ letter-spacing: -0.5px;
 ### 3. Layout Specifications
 
 #### Card Dimensions
-- **Width:** 411px
+- **Width:** 100% — in grid layouts cards occupy exactly 1/4 of the container at desktop (grid columns are repeat(4, 1fr))
 - **Height:** 255px (minimum)
 - **Padding:** 40px (top/bottom), 20px (left/right)
 - **Border:** 1px solid #d5d5cf
+- **Border radius:** 0px (cards are squared; no rounding)
 
 #### Internal Spacing
 - Gap between icon and title: 16px

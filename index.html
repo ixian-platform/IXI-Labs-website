@@ -29,6 +29,10 @@
 
     <link rel="stylesheet" href="/css/variables.css">
     <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/security-section.css">
+    <link rel="stylesheet" href="/css/use-cases-section.css">
+    <link rel="stylesheet" href="/css/partnerships-section.css">
+    <link rel="stylesheet" href="/css/partners-section.css">
 </head>
 <body>
     <a href="#main-content" class="skip-to-main">Skip to main content</a>
@@ -76,7 +80,7 @@
 
                     <!-- Right Graphic (Stack SVG) -->
                     <div class="hero__graphic">
-                        <svg class="hero__graphic-svg" width="285" height="502" viewBox="0 0 285 502" fill="none" xmlns="http://www.w3.org/2000/svg" role="presentation" aria-hidden="true">
+                        <svg id="heroStack" class="hero__graphic-svg stack-graphic" width="285" height="502" viewBox="0 0 285 502" fill="none" xmlns="http://www.w3.org/2000/svg" role="presentation" aria-hidden="true">
                             <g opacity="0.5">
                                 <path d="M280.078 75.8817C285.434 78.9775 285.364 84.0211 279.869 87.1517L150.852 160.198C144.67 163.3 137.386 163.3 131.204 160.198L4.51662 87.1517C-0.873592 84.0211 -0.80404 79.0122 4.51662 75.8817L133.534 2.83541C139.726 -0.278469 147.025 -0.278469 153.217 2.83541L280.078 75.8817Z" stroke="#3B5A86"/>
                                 <path d="M280.078 101.906C285.434 105.002 285.364 110.046 279.869 113.176L150.852 186.223C144.67 189.325 137.386 189.325 131.204 186.223L4.51662 113.176C-0.873592 110.046 -0.80404 105.037 4.51662 101.906L133.534 28.8601C139.726 25.7462 147.025 25.7462 153.217 28.8601L280.078 101.906Z" stroke="#3B5A86"/>
@@ -111,83 +115,300 @@
             </div>
 
             <div class="core-values__container">
+                <div class="core-values__content">
+                    <div class="core-values__main">
+                        <!-- Section Intro -->
+                        <div class="section-intro">
+                            <p class="section-intro__eyebrow">Trusted by teams designing critical communication systems.</p>
+                            <h2 class="section-intro__title">Building decentralized infrastructure for systems that can't afford failure.</h2>
+                            <p class="section-intro__text">IXI Labs designs and deploys secure, decentralized communication infrastructure for critical systems. Our work combines post-quantum security, real-time reliability, and auditable operation at machine scale.</p>
+                        </div>
+
+                        <!-- Cards Grid (occupies ~75% width of the content area on desktop) -->
+                        <div class="core-values__cards">
+                            <!-- Card 1: Post-quantum security by design -->
+                            <article class="card">
+                                <div class="card__content">
+                                    <!-- Icon -->
+                                    <div class="card__icon" aria-hidden="true">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="currentColor" stroke-width="2" fill="none"/>
+                                            <path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                                        </svg>
+                                    </div>
+
+                                    <!-- Title -->
+                                    <h3 class="card__title">Post-quantum security by design</h3>
+
+                                    <!-- Description -->
+                                    <p class="card__description">We build communication systems resilient to current and future cryptographic threats. Our architecture is crypto-agile, enabling migration to PQ algorithms without downtime.</p>
+
+                                    <!-- Outcome Description -->
+                                    <p class="card__outcome">Outcome description</p>
+                                </div>
+
+                                <!-- Learn More Link -->
+                                <a href="#" class="card__link">
+                                    <span>Learn more about our PQ posture</span>
+                                    <span class="card__arrow">
+                                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                    </span>
+                                </a>
+                            </article>
+
+                            <!-- Card 2: Proven infrastructure, in production -->
+                            <article class="card">
+                                <div class="card__content">
+                                    <!-- Icon -->
+                                    <div class="card__icon" aria-hidden="true">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M12 2L2 7l10 5 10-5-10-5z" stroke="currentColor" stroke-width="2" fill="none"/>
+                                            <path d="M2 17l10 5 10-5M2 12l10 5 10-5" stroke="currentColor" stroke-width="2" fill="none"/>
+                                        </svg>
+                                    </div>
+
+                                    <!-- Title -->
+                                    <h3 class="card__title">Proven infrastructure, in production</h3>
+
+                                    <!-- Description -->
+                                    <p class="card__description">Ixian and Spixi run today on the same decentralized infrastructure we deploy for clients – securing real-time messaging, presence, and device communication at scale.</p>
+
+                                    <!-- Outcome Description -->
+                                    <p class="card__outcome">Outcome description</p>
+                                </div>
+
+                                <!-- Learn More Link -->
+                                <a href="#" class="card__link">
+                                    <span>See the stack in action</span>
+                                    <span class="card__arrow">
+                                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                    </span>
+                                </a>
+                            </article>
+
+                            <!-- Card 3: From architecture to deployment -->
+                            <article class="card">
+                                <div class="card__content">
+                                    <!-- Icon -->
+                                    <div class="card__icon" aria-hidden="true">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" stroke="currentColor" stroke-width="2" fill="none"/>
+                                            <polyline points="3.27 6.96 12 12.01 20.73 6.96" stroke="currentColor" stroke-width="2" fill="none"/>
+                                            <line x1="12" y1="22.08" x2="12" y2="12" stroke="currentColor" stroke-width="2"/>
+                                        </svg>
+                                    </div>
+
+                                    <!-- Title -->
+                                    <h3 class="card__title">From architecture to deployment</h3>
+
+                                    <!-- Description -->
+                                    <p class="card__description">We help partners design, validate, and deploy secure communication stacks – from threat modeling to hands-on implementation and operational handover.</p>
+
+                                    <!-- Outcome Description -->
+                                    <p class="card__outcome">Outcome description</p>
+                                </div>
+
+                                <!-- Learn More Link -->
+                                <a href="#" class="card__link">
+                                    <span>How we work with partners</span>
+                                    <span class="card__arrow">
+                                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                    </span>
+                                </a>
+                            </article>
+                        </div>
+                    </div>
+
+                    <!-- Right graphic matching reference -->
+                    <div class="core-values__graphic">
+                        <img id="coreStack" src="/assets/images/stack.svg" alt="Stack Illustration" class="core-values__graphic-svg stack-graphic hidden">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Partners Section -->
+        <section class="partners-section">
+            <!-- Grid Background Lines (decorative) -->
+            <div class="partners-section__grid-bg" aria-hidden="true">
+                <div class="partners-section__grid-line partners-section__grid-line--1"></div>
+                <div class="partners-section__grid-line partners-section__grid-line--2"></div>
+                <div class="partners-section__grid-line partners-section__grid-line--3"></div>
+                <div class="partners-section__grid-line partners-section__grid-line--4"></div>
+                <div class="partners-section__grid-line partners-section__grid-line--5"></div>
+            </div>
+
+            <div class="partners-section__container">
+                <div class="partners-section__content">
+                    <p class="partners-section__header">Working with partners across infrastructure, security, and applied research.</p>
+
+                    <!-- Logos Container -->
+                    <div class="partners-section__logos">
+                        <div class="partners-section__logo"><img src="/assets/images/benchamarked.png" alt="Benchamarked" loading="lazy"></div>
+                        <div class="partners-section__logo"><img src="/assets/images/cryptera.png" alt="Cryptera" loading="lazy"></div>
+                        <div class="partners-section__logo"><img src="/assets/images/even.png" alt="Even" loading="lazy"></div>
+                        <div class="partners-section__logo"><img src="/assets/images/vivat.png" alt="Vivat" loading="lazy"></div>
+                        <div class="partners-section__logo"><img src="/assets/images/ixi-logotype.png" alt="IXI Labs" loading="lazy"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Security Section -->
+        <section class="security-section">
+            <!-- Grid Background Lines (decorative) -->
+            <div class="security-section__grid-bg" aria-hidden="true">
+                <div class="security-section__grid-line security-section__grid-line--1"></div>
+                <div class="security-section__grid-line security-section__grid-line--2"></div>
+                <div class="security-section__grid-line security-section__grid-line--3"></div>
+                <div class="security-section__grid-line security-section__grid-line--4"></div>
+                <div class="security-section__grid-line security-section__grid-line--5"></div>
+            </div>
+
+            <div class="security-section__container">
+                <!-- Content Grid: left column = intro + graphic, right column = cards -->
+                <div class="security-section__content">
+                    <div class="security-section__left">
+                        <!-- Section Intro -->
+                        <div class="section-intro">
+                            <p class="section-intro__eyebrow">Security</p>
+                            <h2 class="section-intro__title">Security as a property of the system, not a feature.</h2>
+                            <p class="section-intro__text">It's not add-ons or wrappers — the architecture itself enforces trust, auditability, and fail-safe operation in real time, even under adversarial conditions.</p>
+                        </div>
+
+                        <!-- Platform Graphic (under intro) -->
+                        <div class="security-section__graphic">
+                            <img src="/assets/images/platform.svg" alt="Ixian Platform Architecture" class="security-section__graphic-svg">
+                        </div>
+                    </div>
+
+                    <!-- Cards Grid -->
+                    <div class="security-section__cards">
+                        <!-- Card 1 -->
+                        <article class="card">
+                            <div class="card__content">
+                                <div class="card__icon" aria-hidden="true">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="currentColor" stroke-width="2" fill="none"/>
+                                        <path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                                    </svg>
+                                </div>
+                                <h3 class="card__title">Self-authenticating devices, verifiable agents</h3>
+                                <p class="card__description">Each node proves identity through decentralized cryptographic proofs—no central server required.</p>
+                                <p class="card__outcome">Outcome description</p>
+                            </div>
+                        </article>
+
+                        <!-- Card 2 -->
+                        <article class="card">
+                            <div class="card__content">
+                                <div class="card__icon" aria-hidden="true">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="currentColor" stroke-width="2" fill="none"/>
+                                        <path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                                    </svg>
+                                </div>
+                                <h3 class="card__title">Post-quantum security as a baseline</h3>
+                                <p class="card__description">Long-term confidentiality with a crypto-agile stack and built-in algorithm migration.</p>
+                                <p class="card__outcome">Outcome description</p>
+                            </div>
+                        </article>
+
+                        <!-- Card 3 -->
+                        <article class="card">
+                            <div class="card__content">
+                                <div class="card__icon" aria-hidden="true">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M12 2L2 7l10 5 10-5-10-5z" stroke="currentColor" stroke-width="2" fill="none"/>
+                                        <path d="M2 17l10 5 10-5M2 12l10 5 10-5" stroke="currentColor" stroke-width="2" fill="none"/>
+                                    </svg>
+                                </div>
+                                <h3 class="card__title">De-centralized, real-time communication fabric</h3>
+                                <p class="card__description">No single point of failure; uninterrupted connectivity for time-sensitive operations.</p>
+                                <p class="card__outcome">Outcome description</p>
+                            </div>
+                        </article>
+
+                        <!-- Card 4 -->
+                        <article class="card">
+                            <div class="card__content">
+                                <div class="card__icon" aria-hidden="true">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" stroke="currentColor" stroke-width="2" fill="none"/>
+                                        <polyline points="3.27 6.96 12 12.01 20.73 6.96" stroke="currentColor" stroke-width="2" fill="none"/>
+                                        <line x1="12" y1="22.08" x2="12" y2="12" stroke="currentColor" stroke-width="2"/>
+                                    </svg>
+                                </div>
+                                <h3 class="card__title">Built for AI agents and machine-scale systems</h3>
+                                <p class="card__description">It is architecturally ready for fully autonomous AI-to-AI messaging at scale.</p>
+                                <p class="card__outcome">Outcome description</p>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Use Cases Section -->
+        <section class="use-cases-section">
+            <!-- Grid Background Lines (decorative) -->
+            <div class="use-cases-section__grid-bg" aria-hidden="true">
+                <div class="use-cases-section__grid-line use-cases-section__grid-line--1"></div>
+                <div class="use-cases-section__grid-line use-cases-section__grid-line--2"></div>
+                <div class="use-cases-section__grid-line use-cases-section__grid-line--3"></div>
+                <div class="use-cases-section__grid-line use-cases-section__grid-line--4"></div>
+                <div class="use-cases-section__grid-line use-cases-section__grid-line--5"></div>
+            </div>
+
+            <div class="use-cases-section__container">
                 <!-- Section Intro -->
-                <div class="section-intro">
-                    <p class="section-intro__eyebrow">Trusted by teams designing critical communication systems.</p>
-                    <h2 class="section-intro__title">Building decentralized infrastructure for systems that can't afford failure.</h2>
-                    <p class="section-intro__text">IXI Labs designs and deploys secure, decentralized communication infrastructure for critical systems. Our work combines post-quantum security, real-time reliability, and auditable operation at machine scale.</p>
+                <div class="section-intro section-intro--dark">
+                    <p class="section-intro__eyebrow">Use Cases</p>
+                    <h2 class="section-intro__title">Applied to real-world systems where security can't fail.</h2>
+                    <p class="section-intro__text">Our post-quantum and decentralized communication stack powers real systems across AI, IoT, and critical infrastructure—where trust, auditability, and uptime are non-negotiable.</p>
                 </div>
 
                 <!-- Cards Grid -->
-                <div class="core-values__cards">
-                    <!-- Card 1: Post-quantum security by design -->
+                <div class="use-cases-section__cards">
+                    <!-- Card 1 -->
                     <article class="card">
                         <div class="card__content">
-                            <!-- Icon -->
                             <div class="card__icon" aria-hidden="true">
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="currentColor" stroke-width="2" fill="none"/>
                                     <path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
                                 </svg>
                             </div>
-
-                            <!-- Title -->
-                            <h3 class="card__title">Post-quantum security by design</h3>
-
-                            <!-- Description -->
-                            <p class="card__description">We build communication systems resilient to current and future cryptographic threats. Our architecture is crypto-agile, enabling migration to PQ algorithms without downtime.</p>
-
-                            <!-- Outcome Description -->
+                            <h3 class="card__title">AI agents & autonomous systems</h3>
+                            <p class="card__description">Identity, secure agent-to-agent communication, and auditability for autonomous systems operating without centralized trust.</p>
                             <p class="card__outcome">Outcome description</p>
                         </div>
-
-                        <!-- Learn More Link -->
-                        <a href="#" class="card__link">
-                            <span>Learn more about our PQ posture</span>
-                            <span class="card__arrow">
-                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
-                            </span>
-                        </a>
                     </article>
 
-                    <!-- Card 2: Proven infrastructure, in production -->
+                    <!-- Card 2 -->
                     <article class="card">
                         <div class="card__content">
-                            <!-- Icon -->
                             <div class="card__icon" aria-hidden="true">
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M12 2L2 7l10 5 10-5-10-5z" stroke="currentColor" stroke-width="2" fill="none"/>
                                     <path d="M2 17l10 5 10-5M2 12l10 5 10-5" stroke="currentColor" stroke-width="2" fill="none"/>
                                 </svg>
                             </div>
-
-                            <!-- Title -->
-                            <h3 class="card__title">Proven infrastructure, in production</h3>
-
-                            <!-- Description -->
-                            <p class="card__description">Ixian and Spixi run today on the same decentralized infrastructure we deploy for clients – securing real-time messaging, presence, and device communication at scale.</p>
-
-                            <!-- Outcome Description -->
+                            <h3 class="card__title">IoT & smart access control</h3>
+                            <p class="card__description">Self-authenticating devices capable of secure, offline decisions without reliance on central infrastructure.</p>
                             <p class="card__outcome">Outcome description</p>
                         </div>
-
-                        <!-- Learn More Link -->
-                        <a href="#" class="card__link">
-                            <span>See the stack in action</span>
-                            <span class="card__arrow">
-                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
-                            </span>
-                        </a>
                     </article>
 
-                    <!-- Card 3: From architecture to deployment -->
+                    <!-- Card 3 -->
                     <article class="card">
                         <div class="card__content">
-                            <!-- Icon -->
                             <div class="card__icon" aria-hidden="true">
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" stroke="currentColor" stroke-width="2" fill="none"/>
@@ -195,30 +416,106 @@
                                     <line x1="12" y1="22.08" x2="12" y2="12" stroke="currentColor" stroke-width="2"/>
                                 </svg>
                             </div>
-
-                            <!-- Title -->
-                            <h3 class="card__title">From architecture to deployment</h3>
-
-                            <!-- Description -->
-                            <p class="card__description">We help partners design, validate, and deploy secure communication stacks – from threat modeling to hands-on implementation and operational handover.</p>
-
-                            <!-- Outcome Description -->
+                            <h3 class="card__title">Secure communications & collaboration</h3>
+                            <p class="card__description">Secure messaging, calling, and coordination built on decentralized, high-availability communication fabric.</p>
                             <p class="card__outcome">Outcome description</p>
                         </div>
-
-                        <!-- Learn More Link -->
-                        <a href="#" class="card__link">
-                            <span>How we work with partners</span>
-                            <span class="card__arrow">
-                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
-                            </span>
-                        </a>
                     </article>
+
+                    <!-- Card 4 -->
+                    <article class="card">
+                        <div class="card__content">
+                            <div class="card__icon" aria-hidden="true">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="currentColor" stroke-width="2" fill="none"/>
+                                    <path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                                </svg>
+                            </div>
+                            <h3 class="card__title">Regulated & high-risk environments</h3>
+                            <p class="card__description">Systems designed for environments where compliance, auditability, and resilience are non-negotiable.</p>
+                            <p class="card__outcome">Outcome description</p>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- Footer -->
+                <div class="use-cases-section__footer">
+                    <p class="use-cases-section__footer-text">Backed by the Ixian communication layer — decentralized, auditable, and production-proven.</p>
+                    <a href="#" class="btn btn--outlined-dark">
+                        <svg class="btn__icon" width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M13 7L18 12L13 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M6 12H18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                        <span class="btn__label">See an example in production</span>
+                    </a>
                 </div>
             </div>
         </section>
+
+        <!-- Partnerships Section -->
+        <section class="partnerships-section">
+            <!-- Grid Background Lines (decorative) -->
+            <div class="partnerships-section__grid-bg" aria-hidden="true">
+                <div class="partnerships-section__grid-line partnerships-section__grid-line--1"></div>
+                <div class="partnerships-section__grid-line partnerships-section__grid-line--2"></div>
+                <div class="partnerships-section__grid-line partnerships-section__grid-line--3"></div>
+                <div class="partnerships-section__grid-line partnerships-section__grid-line--4"></div>
+                <div class="partnerships-section__grid-line partnerships-section__grid-line--5"></div>
+            </div>
+
+            <div class="partnerships-section__container">
+                <div class="partnerships-section__content">
+                    <!-- Left Column - Text Content -->
+                    <div class="partnerships-section__text-content">
+                        <!-- Header -->
+                        <div class="partnerships-section__header">
+                            <h2 class="partnerships-section__title">How we work with partners.</h2>
+                            <p class="partnerships-section__description">We don't drop code over the fence. Our work is co-created with our partners: design sessions, running threat models, choosing the right security stack, building proof-of-concepts, then supporting deployment.</p>
+                            <p class="partnerships-section__description">Much of this work is grounded in the Ixian Platform—a decentralized communication stack designed and maintained by IXI Labs, and used in production.</p>
+                            <a href="#" class="partnerships-section__platform-link">
+                                <span>Explore the Ixian Platform</span>
+                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </a>
+                        </div>
+
+                        <!-- Services -->
+                        <div class="partnerships-section__services">
+                            <div class="partnerships-section__service">
+                                <h3 class="partnerships-section__service-title">Advisory & architecture</h3>
+                                <p class="partnerships-section__service-description">We help teams assess threats, choose trust models, and design secure communication architectures - grounded in real-world constraints and risk appetite.</p>
+                            </div>
+
+                            <div class="partnerships-section__service">
+                                <h3 class="partnerships-section__service-title">System design and validation</h3>
+                                <p class="partnerships-section__service-description">We work closely with your engineering teams to design, review, and validate security-critical components, ensuring correctness, defense-in-depth, and long-term maintainability before deployment.</p>
+                            </div>
+
+                            <div class="partnerships-section__service">
+                                <h3 class="partnerships-section__service-title">Implementation and deployment</h3>
+                                <p class="partnerships-section__service-description">From adapting the Ixian stack to custom integration - we provide hands-on implementation support, infrastructure planning, and operational handover.</p>
+                            </div>
+                        </div>
+
+                        <!-- CTA -->
+                        <div class="partnerships-section__cta">
+                            <a href="/contact/" class="btn btn--primary">
+                                <span class="btn__label">Contact IXI Labs</span>
+                            </a>
+                            <p class="partnerships-section__cta-note">We also support engagements in regulatory compliance.</p>
+                        </div>
+                    </div>
+
+                    <!-- Right Column - Image -->
+                    <div class="partnerships-section__image">
+                        <img src="/assets/images/office.png" alt="IXI Labs partnership collaboration" loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
     </main>
 
     <script src="/js/main.js"></script>

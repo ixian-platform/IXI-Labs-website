@@ -1,0 +1,215 @@
+/* ===================================
+   PARTNERSHIPS SECTION
+   =================================== */
+.partnerships-section {
+    position: relative;
+    background-color: var(--surface-01);
+}
+
+.partnerships-section__container {
+    max-width: 80rem; /* 1280px */
+    margin: 0 auto;
+    padding: 0; /* remove horizontal padding so content aligns to grid lines */
+    position: relative;
+} 
+
+/* Grid lines background (hidden on light section) */
+.partnerships-section__grid-bg {
+    display: none; /* remove grid lines on light background */
+}
+
+/* Individual grid lines */
+.partnerships-section__grid-line {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background: var(--outline-02); /* #A3A39D */
+    opacity: 0.2;
+}
+
+/* Desktop: 5 lines creating 4 equal bands */
+@media (min-width: 48rem) {
+    .partnerships-section__grid-line--1 {
+        left: 0;
+    }
+
+    .partnerships-section__grid-line--2 {
+        left: 25%;
+    }
+
+    .partnerships-section__grid-line--3 {
+        left: 50%;
+    }
+
+    .partnerships-section__grid-line--4 {
+        left: 75%;
+    }
+
+    .partnerships-section__grid-line--5 {
+        right: 0;
+    }
+}
+
+/* Mobile/Tablet: Only show 2 lines at edges */
+@media (max-width: 48rem) {
+    .partnerships-section__grid-line--1 {
+        left: 0;
+    }
+
+    .partnerships-section__grid-line--2,
+    .partnerships-section__grid-line--3,
+    .partnerships-section__grid-line--4 {
+        display: none;
+    }
+
+    .partnerships-section__grid-line--5 {
+        right: 0;
+    }
+}
+
+/* Content wrapper - two columns */
+.partnerships-section__content {
+    display: grid;
+    gap: var(--spacing-super); /* 64px */
+    grid-template-columns: 1fr; /* Mobile: 1 column */
+    align-items: start;
+}
+
+/* Desktop: 50/50 split */
+@media (min-width: 48rem) {
+    .partnerships-section__content {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Left column - Text content */
+.partnerships-section__text-content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-super); /* 64px */
+}
+
+/* Header block */
+.partnerships-section__header {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md); /* 16px */
+}
+
+.partnerships-section__title {
+    font-family: var(--font-secondary);
+    font-weight: var(--font-weight-bold);
+    font-size: var(--font-size-heading-lg);
+    line-height: var(--line-height-heading-lg);
+    letter-spacing: var(--letter-spacing-heading-lg);
+    color: var(--text-01);
+    margin: 0;
+}
+
+.partnerships-section__description {
+    font-family: var(--font-secondary);
+    font-weight: var(--font-weight-regular);
+    font-size: var(--font-size-body-md);
+    line-height: var(--line-height-body-md);
+    letter-spacing: var(--letter-spacing-body-md);
+    color: var(--text-01);
+    margin: 0;
+}
+
+.partnerships-section__platform-link {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-xxs); /* 4px */
+    font-family: var(--font-secondary);
+    font-weight: var(--font-weight-semibold);
+    font-size: var(--font-size-label-md);
+    line-height: var(--line-height-label-md);
+    letter-spacing: var(--letter-spacing-label-md);
+    color: var(--text-action-default);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.partnerships-section__platform-link:hover {
+    color: var(--text-action-hover);
+}
+
+.partnerships-section__platform-link svg {
+    width: 1rem;
+    height: 1rem;
+    flex-shrink: 0;
+}
+
+/* Services list */
+.partnerships-section__services {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xl); /* 24px */
+}
+
+.partnerships-section__service {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs); /* 8px */
+}
+
+.partnerships-section__service-title {
+    font-family: var(--font-secondary);
+    font-weight: var(--font-weight-semibold);
+    font-size: var(--font-size-heading-sm);
+    line-height: var(--line-height-heading-sm);
+    letter-spacing: var(--letter-spacing-heading-sm);
+    color: var(--text-01);
+    margin: 0;
+}
+
+.partnerships-section__service-description {
+    font-family: var(--font-secondary);
+    font-weight: var(--font-weight-regular);
+    font-size: var(--font-size-body-sm);
+    line-height: var(--line-height-body-sm);
+    letter-spacing: var(--letter-spacing-body-sm);
+    color: var(--text-02);
+    margin: 0;
+}
+
+/* CTA block */
+.partnerships-section__cta {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md); /* 16px */
+}
+
+.partnerships-section__cta-note {
+    font-family: var(--font-secondary);
+    font-weight: var(--font-weight-regular);
+    font-size: var(--font-size-body-xs);
+    line-height: var(--line-height-body-xs);
+    letter-spacing: var(--letter-spacing-body-xs);
+    color: var(--text-02);
+    margin: 0;
+}
+
+/* Right column - Image */
+.partnerships-section__image {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    border-radius: var(--radius-xs);
+}
+
+.partnerships-section__image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    filter: grayscale(100%);
+    opacity: 0.85;
+}
+
+/* Order image first on mobile */
+@media (max-width: 48rem) {
+    .partnerships-section__image {
+        order: -1;
+    }
+}

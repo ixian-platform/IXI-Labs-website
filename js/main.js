@@ -20,4 +20,25 @@ document.addEventListener('DOMContentLoaded', () => {
 
     fadeElements.forEach(el => observer.observe(el));
     staggerElements.forEach(el => observer.observe(el));
+
+    // Stack svg swapping: fade hero stack out and core stack in when .core-values is visible
+    const heroStack = document.getElementById('heroStack');
+    const coreStack = document.getElementById('coreStack');
+    const coreSection = document.querySelector('.core-values');
+
+    if (heroStack && coreStack && coreSection) {
+        const stacksObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    heroStack.classList.add('hidden');
+                    coreStack.classList.remove('hidden');
+                } else {
+                    heroStack.classList.remove('hidden');
+                    coreStack.classList.add('hidden');
+                }
+            });
+        }, { threshold: 0.35 });
+
+        stacksObserver.observe(coreSection);
+    }
 });

@@ -11,8 +11,10 @@
     /* Layout */
     display: flex;
     flex-direction: column;
-    width: 25.6875rem; /* 411px */
+    width: 100%;
     min-height: 15.9375rem; /* 255px */
+    height: 100%; /* allow grid items to stretch to equal height */
+    justify-content: space-between; /* ensure link sits at bottom when card expands */
 
     /* Spacing */
     padding: var(--spacing-3xl) var(--spacing-lg); /* 40px 20px */
@@ -21,7 +23,7 @@
     /* Surface */
     background-color: var(--surface-01); /* #fafaf8 */
     border: var(--outline-width-sm) solid var(--outline-01); /* 1px solid #d5d5cf */
-    border-radius: var(--radius-lg); /* 16px */
+    border-radius: 0; /* 0px radius per design requirement */
 
     /* Interaction */
     transition: background-color 0.2s ease;
@@ -150,7 +152,7 @@
     cursor: pointer;
     transition: opacity 0.2s ease;
 
-    /* Ensure it's at the end of the card */
+    /* Keep link aligned to the start (left) — card expansion will place it at the bottom */
     align-self: flex-start;
 }
 
@@ -251,7 +253,7 @@ button.card__link {
 /* Container for multiple cards */
 .card-grid {
     display: grid;
-    gap: var(--spacing-xl); /* 24px */
+    gap: 0; /* No gap - cards sit flush with grid lines */
 }
 
 /* 1 column on mobile */
@@ -266,10 +268,10 @@ button.card__link {
     }
 }
 
-/* 3 columns on desktop */
+/* 4 columns on desktop to match grid lines */
 @media (min-width: 64rem) {
     .card-grid {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(4, 1fr);
     }
 }
 

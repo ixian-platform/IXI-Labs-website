@@ -1,0 +1,210 @@
+/* ===================================
+   SECURITY SECTION
+   =================================== */
+.security-section {
+    position: relative;
+    background-color: var(--surface-01);
+}
+
+.security-section__container {
+    max-width: 80rem; /* 1280px */
+    margin: 0 auto;
+    padding: 0; /* remove horizontal padding so content aligns to grid lines */
+    position: relative;
+} 
+
+/* Grid lines background (hidden on light section) */
+.security-section__grid-bg {
+    display: none; /* remove grid lines on light background */
+}
+
+/* Individual grid lines */
+.security-section__grid-line {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background: var(--outline-02); /* #A3A39D */
+    opacity: 0.2;
+}
+
+/* Desktop: 5 lines creating 4 equal bands */
+@media (min-width: 48rem) {
+    .security-section__grid-line--1 {
+        left: 0;
+    }
+
+    .security-section__grid-line--2 {
+        left: 25%;
+    }
+
+    .security-section__grid-line--3 {
+        left: 50%;
+    }
+
+    .security-section__grid-line--4 {
+        left: 75%;
+    }
+
+    .security-section__grid-line--5 {
+        right: 0;
+    }
+}
+
+/* Mobile/Tablet: Only show 2 lines at edges */
+@media (max-width: 48rem) {
+    .security-section__grid-line--1 {
+        left: 0;
+    }
+
+    .security-section__grid-line--2,
+    .security-section__grid-line--3,
+    .security-section__grid-line--4 {
+        display: none;
+    }
+
+    .security-section__grid-line--5 {
+        right: 0;
+    }
+}
+
+/* Content Grid - left column: intro + graphic, right column: cards */
+.security-section__content {
+    display: grid;
+    gap: var(--spacing-super); /* 64px */
+    margin-top: var(--spacing-super); /* 64px from section intro */
+    grid-template-columns: 1fr; /* Mobile: 1 column stacked */
+}
+
+/* Desktop: left + right columns */
+@media (min-width: 48rem) {
+    .security-section__content {
+        grid-template-columns: 3fr 2fr; /* left column wider to match reference */
+        align-items: start;
+    }
+}
+
+/* Left column wrapper */
+.security-section__left {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-super);
+    justify-content: center; /* vertically center intro + graphic relative to right column */
+}
+
+.security-section__left .section-intro {
+    max-width: none; /* allow intro to occupy full left column */
+    margin-bottom: var(--spacing-lg);
+}
+
+/* Left column - Platform graphic */
+.security-section__graphic {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.security-section__graphic-svg {
+    width: 100%;
+    max-width: 22rem; /* adjust size to better match reference */
+    height: auto;
+    display: block;
+    margin-left: 0; /* align to left of column */
+}
+
+/* Right column - Cards grid */
+.security-section__cards {
+    display: grid;
+    gap: 0; /* No gap - cards sit flush */
+    grid-template-columns: 1fr; /* Mobile: 1 column */
+    border: var(--outline-width-sm) solid var(--outline-02);
+    border-radius: 0; /* 0px radius per design */
+    overflow: hidden;
+    background: transparent;
+}
+
+/* Tablet and up: 2 columns */
+@media (min-width: 48rem) {
+    .security-section__cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Desktop: keep as 2 columns (2x2 layout) */
+@media (min-width: 64rem) {
+    .security-section__cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Cards inside the container: use same sizing/padding as other sections */
+.security-section .card {
+    min-height: 15.9375rem; /* 255px */
+    padding: var(--spacing-3xl) var(--spacing-lg); /* 40px 20px */
+    gap: var(--spacing-md); /* 16px */
+    border-radius: 0; /* internal corners square */
+    background-color: var(--surface-01);
+    border: none; /* container provides outer border */
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+/* Full-height vertical separators using pseudo-element on second column items */
+@media (min-width: 48rem) {
+    .security-section__cards .card + .card {
+        position: relative;
+    }
+
+    .security-section__cards .card + .card::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: var(--outline-width-sm);
+        background: var(--outline-02);
+    }
+
+    /* Horizontal separator between rows */
+    .security-section__cards .card:nth-child(n+3) {
+        border-top: var(--outline-width-sm) solid var(--outline-02);
+    }
+}
+
+/* Slightly scale down title size to match reference */
+.security-section .card__title {
+    font-size: var(--font-size-heading-md);
+    line-height: var(--line-height-heading-md);
+}
+
+/* Ensure text blocks have consistent spacing */
+.security-section .card__content p {
+    margin-bottom: 0.75rem;
+}
+/* Vertical and horizontal separators between internal cells */
+@media (min-width: 48rem) {
+    .security-section__cards .card:nth-child(2),
+    .security-section__cards .card:nth-child(4) {
+        border-left: var(--outline-width-sm) solid var(--outline-02);
+    }
+
+    .security-section__cards .card:nth-child(n+3) {
+        border-top: var(--outline-width-sm) solid var(--outline-02);
+    }
+}
+
+/* Remove leftover per-card border rules */
+.security-section__cards .card + .card { border-left: none; }
+.security-section__cards .card:nth-child(even) { border-left: none; }
+.security-section__cards .card:nth-child(n + 3) { border-top: none; }
+
+.security-section .card__description {
+    font-size: var(--font-size-body-xs);
+    line-height: var(--line-height-body-xs);
+}
+
+/* separators are intentionally applied via explicit rules above; duplicate removal rules removed to allow separators to show */
+

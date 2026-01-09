@@ -1,0 +1,221 @@
+/* ===================================
+   USE CASES SECTION
+   =================================== */
+.use-cases-section {
+    position: relative;
+    background-color: var(--surface-inverse-01);
+    color: var(--text-inverse-01);
+}
+
+.use-cases-section__container {
+    max-width: 80rem; /* 1280px */
+    margin: 0 auto;
+    padding: 0; /* remove horizontal padding so content aligns to grid lines */
+    position: relative;
+} 
+
+/* Grid lines background */
+.use-cases-section__grid-bg {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: 80rem; /* 1280px */
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Individual grid lines */
+.use-cases-section__grid-line {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background: var(--outline-action-primary-default); /* #3B5A86 */
+    opacity: 0.15;
+}
+
+/* Desktop: 5 lines creating 4 equal bands */
+@media (min-width: 48rem) {
+    .use-cases-section__grid-line--1 {
+        left: 0;
+    }
+
+    .use-cases-section__grid-line--2 {
+        left: 25%;
+    }
+
+    .use-cases-section__grid-line--3 {
+        left: 50%;
+    }
+
+    .use-cases-section__grid-line--4 {
+        left: 75%;
+    }
+
+    .use-cases-section__grid-line--5 {
+        right: 0;
+    }
+}
+
+/* Mobile/Tablet: Only show 2 lines at edges */
+@media (max-width: 48rem) {
+    .use-cases-section__grid-line--1 {
+        left: 0;
+    }
+
+    .use-cases-section__grid-line--2,
+    .use-cases-section__grid-line--3,
+    .use-cases-section__grid-line--4 {
+        display: none;
+    }
+
+    .use-cases-section__grid-line--5 {
+        right: 0;
+    }
+}
+
+/* Cards grid - 4 cards in a row */
+.use-cases-section__cards {
+    display: grid;
+    gap: 0; /* No gap - cards sit flush */
+    margin-top: var(--spacing-super); /* 64px */
+    grid-template-columns: 1fr; /* Mobile: 1 column */
+}
+
+/* Tablet: 2 columns */
+@media (min-width: 48rem) {
+    .use-cases-section__cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Desktop: 4 columns - each card is exactly 25% */
+@media (min-width: 64rem) {
+    .use-cases-section__cards {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/* Dark theme cards */
+.use-cases-section .card {
+    background-color: transparent;
+    border: var(--outline-width-sm) solid rgba(255, 255, 255, 0.15);
+}
+
+.use-cases-section .card:hover {
+    background-color: rgba(255, 255, 255, 0.03);
+}
+
+/* Remove duplicate borders between cards */
+.use-cases-section__cards .card + .card {
+    border-left: none;
+}
+
+/* Desktop: remove left border on first card of each row */
+@media (min-width: 64rem) {
+    .use-cases-section__cards .card:nth-child(4n + 1) {
+        border-left: var(--outline-width-sm) solid rgba(255, 255, 255, 0.15);
+    }
+}
+
+/* Tablet: remove left border on first card of each row */
+@media (min-width: 48rem) and (max-width: 64rem) {
+    .use-cases-section__cards .card:nth-child(2n + 1) {
+        border-left: var(--outline-width-sm) solid rgba(255, 255, 255, 0.15);
+    }
+}
+
+.use-cases-section .card__icon {
+    color: var(--text-inverse-01);
+}
+
+.use-cases-section .card__title {
+    color: var(--text-inverse-01);
+}
+
+.use-cases-section .card__description {
+    color: var(--text-dark-02);
+}
+
+.use-cases-section .card__outcome {
+    color: var(--text-dark-02);
+}
+
+.use-cases-section .card__link {
+    color: var(--text-dark-action-default);
+}
+
+/* Footer text */
+.use-cases-section__footer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--spacing-xxl); /* 32px */
+    margin-top: var(--spacing-super); /* 64px */
+}
+
+.use-cases-section__footer-text {
+    font-family: var(--font-secondary);
+    font-weight: var(--font-weight-regular);
+    font-size: var(--font-size-body-md);
+    line-height: var(--line-height-body-md);
+    letter-spacing: var(--letter-spacing-body-md);
+    color: var(--text-dark-02);
+    margin: 0;
+}
+
+/* Outlined button for dark background */
+.btn--outlined-dark {
+    background-color: transparent;
+    color: var(--text-inverse-01);
+    border: var(--outline-width-md) solid var(--outline-dark-action-secondary-default);
+    border-radius: var(--radius-xxs);
+}
+
+.btn--outlined-dark:hover:not(:disabled) {
+    background-color: var(--surface-dark-03);
+    color: var(--text-inverse-01);
+    border-color: var(--outline-dark-action-secondary-hover);
+}
+
+.btn--outlined-dark:active:not(:disabled),
+.btn--outlined-dark.is-pressed {
+    background-color: var(--surface-dark-02);
+    color: var(--text-inverse-01);
+    border-color: var(--outline-dark-action-secondary-pressed);
+}
+
+.btn--outlined-dark:focus-visible {
+    background-color: var(--surface-dark-03);
+    color: var(--text-inverse-01);
+    border-color: var(--outline-dark-action-secondary-hover);
+    outline: var(--outline-width-md) solid var(--outline-dark-accent);
+    outline-offset: -0.375rem;
+}
+
+.btn--outlined-dark:disabled,
+.btn--outlined-dark.disabled {
+    background-color: transparent;
+    color: var(--text-dark-action-disabled);
+    border-color: var(--outline-dark-action-secondary-disabled);
+}
+/* Cards in the use-cases grid have 0px radius to match reference */
+.use-cases-section__cards .card {
+    border-radius: 0;
+}
+
+/* Keep vertical separators aligned with grid lines (first card in each row keeps left border) */
+@media (min-width: 64rem) {
+    .use-cases-section__cards .card:nth-child(4n + 1) {
+        border-left: var(--outline-width-sm) solid rgba(255, 255, 255, 0.15);
+    }
+}
+
+@media (min-width: 48rem) and (max-width: 64rem) {
+    .use-cases-section__cards .card:nth-child(2n + 1) {
+        border-left: var(--outline-width-sm) solid rgba(255, 255, 255, 0.15);
+    }
+}
